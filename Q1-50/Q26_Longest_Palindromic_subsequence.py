@@ -6,7 +6,7 @@ class Solution:
         n = len(s)
         dp = [[0]*n for i in range(n)]
         for i in range(n):
-            dp[i][i] = 1
+             dp[i][i] = 1
         for length in range(1,n):
             for i in range(n):
                 j=i+length
