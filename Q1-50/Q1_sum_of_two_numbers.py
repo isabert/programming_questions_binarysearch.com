@@ -1,4 +1,5 @@
 class Solution:
+
     def solve(self, nums, k):
         count = {}
         for i in nums:
