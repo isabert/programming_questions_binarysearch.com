@@ -1,5 +1,5 @@
 class Solution:
-    def solve(self, n):
+    def solve_ineffective(self, n):
         while(n>=10):
             res = 0
             while(True):
@@ -10,3 +10,7 @@ class Solution:
             n = res
 
         return n
+
+    def solve(self, n):
+        # see the proof folder for mathematically profe
+        return n%9 if n%9!=0 else 9
