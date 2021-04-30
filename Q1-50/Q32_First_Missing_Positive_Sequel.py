@@ -1,6 +1,8 @@
 import bisect
 class Solution:
     def solve(self, arr):
+        #time complexity: O(logn)
+        #space complexity: O(1)
         start = l = bisect.bisect(arr, 0)
         r = len(arr)-1
         if l > r:
@@ -23,6 +25,8 @@ class Solution:
         return len(arr)-start+1
 
     def solve_alt(self, arr):
+        #time complexity: O(logn)
+        #space complexity: O(1)
         l = 0
         r = len(arr)-1
         mid = None
@@ -45,3 +49,20 @@ class Solution:
                 r = mid
 
         return arr[mid-1]
+
+    def solve_slowest(self, arr):
+        #time complexity: O(n)
+        #space complexity: O(n)
+        mx = max(arr)
+        flag = [False] * mx
+
+        for i in range(len(arr)):
+            flag[arr[i] - 1] = True
+
+        res = mx + 1
+
+        for i in range(mx):
+            if (flag[i] == False):
+                res = i + 1
+
+        return res
